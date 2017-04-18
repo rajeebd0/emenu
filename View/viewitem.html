@@ -1,0 +1,214 @@
+<div id="wrapper">
+
+    <!-- begin TOP NAVIGATION -->
+    <nav class="navbar-top" role="navigation" ng-include src="'View/topbar.html'">
+
+    </nav>
+    <!-- /.navbar-top -->
+    <!-- end TOP NAVIGATION -->
+
+    <!-- begin SIDE NAVIGATION -->
+    <nav class="navbar-side" role="navigation" ng-include src="'View/menu.html'">
+
+    </nav>
+    <!-- /.navbar-side -->
+    <!-- end SIDE NAVIGATION -->
+
+    <!-- begin MAIN PAGE CONTENT -->
+    <div id="page-wrapper">
+
+        <div class="page-content">
+
+            <!-- begin PAGE TITLE AREA -->
+            <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-title">
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- end PAGE TITLE AREA -->
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--<div class="portlet portlet-green" ID="EDITDIV" style="display:none">-->                         
+                                <div class="portlet portlet-green" ID="EDITDIV">
+                                    <div class="portlet-heading">
+                                        <div class="portlet-title">
+                                            <h4><i class="fa fa-th-list"></i> Add/Edit Item </h4>
+                                        </div>
+                                        <div class="portlet-widgets">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#transactionsPortlet"><i class="fa fa-chevron-down"></i></a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div id="transactionsPortlet" class="panel-collapse collapse in">
+                                        <div class="portlet-body">
+                                            <form ng-submit="submit()"  name="form" role="form">
+                                                <!--total_employee_div-->
+                                                <div class="totalaligndiv">
+                                                    <div class="col-md-6">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <span class="input-group-addon ndrftextwidth text-left">Item Name :</span>
+                                                            <input type="text" ng-model="itemname" id="itemname" class="form-control" autocomplete="off">
+                                                            <input type="hidden" ng-model="hidid" id="hidid" class="form-control" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <span class="input-group-addon ndrftextwidth text-left">Category :</span>
+                                                            <select class="form-control" id="selectCategory" ng-model="selectCategory" ng-options="cat.name for cat in categorydata track by cat.value">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <span class="input-group-addon ndrftextwidth text-left"> Price:</span>
+                                                            <input type="text" ng-model="price" id="price" class="form-control" autocomplete="off" ng-keypress="filterValue($event)">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <span class="input-group-addon ndrftextwidth text-left">Image :</span>
+                                                            <input type="file" ng-model="form.image" id="img" type="file" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <span class="input-group-addon ndrftextwidth text-left">Item Type :</span>
+                                                            <div style="padding:5px 10px 0px 10px;">
+                                                                <label class="checkbox-inline">
+                                                                    <input type="radio" name="foodType" value="1" ng-model="foodType"> Veg
+                                                                </label>
+                                                                <label class="checkbox-inline">
+                                                                    <input type="radio" name="foodType" value="2" ng-model="foodType"> Non veg
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <div style="padding:5px 10px 0px 10px;">
+                                                                <label class="checkbox-inline">
+                                                                    <input type="radio" name="foodSpice" value="1" ng-model="foodspicy"> Normal Spicy
+                                                                </label>
+                                                                <label class="checkbox-inline">
+                                                                    <input type="radio" name="foodSpice" value="2" ng-model="foodspicy"> Extra Spicy
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="input-group bmargindiv1 col-md-12">
+                                                            <span class="input-group-addon ndrftextwidth text-left">Chep Comment :</span>
+                                                            <textarea id="comment" ng-model="comment" class="form-control" rows="2" style="margin: 0px -0.5px 0px 0px; height: 120px; resize:none;"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <!--end_total_employee_div-->
+                                                <div class="col-lg-12">
+                                                    <div class="tbpaddingdiv2 text-center">
+                                                        <img ng-show="foo.bar" ng-src="{{image_source}}" style="width:100px;height:60px;" ><br><br>
+                                                        <input type="button" class="btn btn-danger btn-md" value="Back" ng-click="cancelSave();">&nbsp;
+                                                        <input type="submit" class="btn btn-green btn-md" value="Save">												
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portlet portlet-green" ID="LISTDIV">
+                                    <div class="portlet-heading">
+                                        <div class="portlet-title">
+                                            <h4><i class="fa fa-exchange fa-fw"></i> Item Listing </h4>
+                                        </div>
+                                        <div class="portlet-widgets">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#listingPortlet"><i class="fa fa-chevron-down"></i></a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div id="listingPortlet" class="panel-collapse collapse in">
+                                        <div class="portlet-body">
+                                            <div class="table-responsive dashboard-demo-table">
+                                                <table class="table table-bordered table-striped table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="60px;">SL NO</th>
+                                                            <th width="300px;">Item Name</th>
+                                                            <th width="220px;">Category </th>
+                                                            <th width="100px;">Price </th>
+                                                            <th width="120px;">Type </th>
+                                                            <th width="100px;">Image </th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="LISTVIEW">
+                                                        <tr ng-repeat="item in itemdata">
+                                                            <td>{{$index + 1}}</td>
+                                                            <td>{{item.item_name}}</td>
+                                                            <td>{{item.name}}</td>
+                                                            <td>{{item.price}}</td>
+                                                            <td>{{(item.food_type === '1' ) ? 'Veg' : 'Non veg'}} <br> {{(item.food_spice === '1' ) ? 'Normal Spicy' : 'Extra Spicy'}}</td>
+                                                            <td><img ng-src="itemImage/{{item.image}}" style="width:100px;height:40px;"></td>
+                                                            <td>
+                                                                <button class="btn btn-xs btn-default outlinedivnone" title="View Chep Comment" ng-click="viewItemComment(item.id);"><i class="fa fa-eye"></i> </button>
+                                                                <button class="btn btn-xs btn-success outlinedivnone" title="Edit" ng-click="editIem(item.id);"><i class="fa fa-edit"></i> </button>
+                                                                <button class="btn btn-xs btn-danger outlinedivnone" title="Delete" ng-click="deleteItem(item.id);"><i class="fa fa-times"></i> </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--<a class="btn btn-green">View All Transactions</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col-lg-12 -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.page-content -->
+
+        </div>
+        <!-- /#page-wrapper -->
+        <!-- end MAIN PAGE CONTENT -->
+
+    </div>
+
+    <div class="modal modal-flex fade" id="viewitempopdiv" tabindex="-1" role="dialog" aria-labelledby="flexModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:350px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="flexModalLabel">Chep Comment</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="height:100px; overflow-x: hidden; overflow-y: scroll;">
+                        <div class="table-responsive">
+                            {{comment}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>

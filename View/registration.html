@@ -1,0 +1,145 @@
+<div id="wrapper">
+
+    <!-- begin TOP NAVIGATION -->
+    <nav class="navbar-top" role="navigation" ng-include src="'View/topbar.html'">
+
+    </nav>
+    <!-- /.navbar-top -->
+    <!-- end TOP NAVIGATION -->
+
+    <!-- begin SIDE NAVIGATION -->
+    <nav class="navbar-side" role="navigation" ng-include src="'View/menu.html'">
+
+    </nav>
+    <!-- /.navbar-side -->
+    <!-- end SIDE NAVIGATION -->
+
+    <!-- begin MAIN PAGE CONTENT -->
+    <div id="page-wrapper">
+
+        <div class="page-content">
+
+            <!-- begin PAGE TITLE AREA -->
+            <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-title">
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- end PAGE TITLE AREA -->
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="portlet portlet-green">
+                                <div class="portlet-heading">
+                                    <div class="portlet-title">
+                                        <h4><i class="fa fa-th-list"></i> Tab Registration </h4>
+                                    </div>
+                                    <div class="portlet-widgets">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#transactionsPortlet"><i class="fa fa-chevron-down"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="transactionsPortlet" class="panel-collapse collapse in">
+                                    <div class="portlet-body">
+                                        <form ng-submit="submit()"  name="form" role="form">
+                                            <!--total_employee_div-->
+                                            <div class="totalaligndiv">
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Tab Name :</span>
+                                                        <input type="text" ng-model="tabname" id="tabname" class="form-control" autocomplete="off">
+                                                        <input type="hidden" ng-model="hidid" id="hidid" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Tab Id :</span>
+                                                        <input type="text" ng-model="tabid" id="tabid" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Status :</span>
+                                                        <select name="status" ng-model="status" id="status" class="form-control" ng-init="status = '1'" ng-dropdown>
+                                                            <option ng-option value="1">Active</option>	
+                                                            <option ng-option value="0">Inactive</option>	
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!--end_total_employee_div-->
+                                            <div class="col-lg-12">
+                                                <div class="tbpaddingdiv2 text-center">
+                                                    <input type="button" class="btn btn-danger btn-md" value="Cancel" ng-click="cancelSave();">&nbsp;
+                                                    <input type="submit" class="btn btn-green btn-md" value="Save">												
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet portlet-green">
+                                <div class="portlet-heading">
+                                    <div class="portlet-title">
+                                        <h4><i class="fa fa-exchange fa-fw"></i> Tab Listing </h4>
+                                    </div>
+                                    <div class="portlet-widgets">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#listingPortlet"><i class="fa fa-chevron-down"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="listingPortlet" class="panel-collapse collapse in">
+                                    <div class="portlet-body">
+                                        <div class="table-responsive dashboard-demo-table">
+                                            <table class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL NO</th>
+                                                        <th width="550px;">Tab Name</th>
+                                                        <th width="150px;">Tab Id </th>
+                                                        <th width="200px;">Status </th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="LISTVIEW">
+                                                    <tr ng-repeat="tab in tabdata">
+                                                        <td>{{$index + 1}}</td>
+                                                        <td>{{tab.devicename}}</td>
+                                                        <td>{{tab.deviceid}}</td>
+                                                        <td>{{(tab.status === '1' ) ? 'Active' : 'Inactive'}}</td>
+                                                        <td>
+                                                            <button class="btn btn-xs btn-success outlinedivnone" title="Edit" ng-click="editTab(tab.id);"><i class="fa fa-edit"></i> </button>
+                                                            <button class="btn btn-xs btn-danger outlinedivnone" title="Delete" ng-click="deleteTab(tab.id);"><i class="fa fa-times"></i> </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--<a class="btn btn-green">View All Transactions</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col-lg-12 -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.page-content -->
+
+    </div>
+    <!-- /#page-wrapper -->
+    <!-- end MAIN PAGE CONTENT -->
+
+</div>

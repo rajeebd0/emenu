@@ -1,0 +1,124 @@
+<div id="wrapper">
+
+    <!-- begin TOP NAVIGATION -->
+    <nav class="navbar-top" role="navigation" ng-include src="'View/topbar.html'">
+
+    </nav>
+    <!-- /.navbar-top -->
+    <!-- end TOP NAVIGATION -->
+
+    <!-- begin SIDE NAVIGATION -->
+    <nav class="navbar-side" role="navigation" ng-include src="'View/menu.html'">
+
+    </nav>
+    <!-- /.navbar-side -->
+    <!-- end SIDE NAVIGATION -->
+
+    <!-- begin MAIN PAGE CONTENT -->
+    <div id="page-wrapper">
+
+        <div class="page-content">
+
+            <!-- begin PAGE TITLE AREA -->
+            <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-title">
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- end PAGE TITLE AREA -->
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="portlet portlet-green">
+                                <div class="portlet-heading">
+                                    <div class="portlet-title">
+                                        <h4><i class="fa fa-th-list"></i> Setting </h4>
+                                    </div>
+                                    <div class="portlet-widgets">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#transactionsPortlet"><i class="fa fa-chevron-down"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="transactionsPortlet" class="panel-collapse collapse in">
+                                    <div class="portlet-body">
+                                        <form ng-submit="submit()"  name="form" role="form">
+                                            <!--total_employee_div-->
+                                            <div class="totalaligndiv">
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Restaurant Name :</span>
+                                                        <input type="text" ng-model="restaurantname" id="restaurantname" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Restaurant Code :</span>
+                                                        <input type="text" ng-model="restaurantcode" id="restaurantcode" class="form-control" autocomplete="off" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left"> Login Id :</span>
+                                                        <input type="text" ng-model="loginid" id="loginid" class="form-control" autocomplete="off" ng-keypress="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left"> password :</span>
+                                                        <input type="password" ng-model="pwd" id="pwd" class="form-control" autocomplete="off" placeholder="*******" ng-keypress="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left"> Slogan :</span>
+                                                        <input type="text" ng-model="slogan" id="slogan" class="form-control" autocomplete="off" ng-keypress="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Logo :</span>
+                                                        <input type="file" ng-model="form.image" id="img" type="file" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left"> Description :</span>
+                                                        <textarea id="comment" ng-model="comment" class="form-control" rows="2" style="margin: 0px -0.5px 0px 0px; height: 120px; resize:none;"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!--end_total_employee_div-->
+                                            <div class="col-lg-12">
+                                                <div class="tbpaddingdiv2 text-center">
+                                                    <img ng-show="foo.bar" ng-src="{{image_source}}" style="width:100px;height:60px;" ><br><br>
+                                                    <input type="submit" class="btn btn-green btn-md" value="Update">												
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col-lg-12 -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.page-content -->
+
+    </div>
+    <!-- /#page-wrapper -->
+    <!-- end MAIN PAGE CONTENT -->
+
+</div>

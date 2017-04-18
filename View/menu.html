@@ -1,0 +1,129 @@
+<div class="navbar-collapse sidebar-collapse collapse">
+    <ul id="side" class="nav navbar-nav side-nav">
+        <li class="side-user hidden-xs">
+            <!--<div class="profileimage"><img class="img-circle" src="img/profile-pic-blank.png" alt=""></div>-->
+            <p class="welcome">
+                <i class="fa fa-key"></i> Logged in as
+            </p>
+            <p class="name tooltip-sidebar-logout">
+                Admin <a style="color: inherit; outline:none;" class="logout_open outlinedivnone" ui-sref="/" ng-click="logout();" title="Logout"><i class="fa fa-sign-out"></i></a>
+            </p>
+            <div class="clearfix"></div>
+        </li>  
+        <li>
+            <a href="registration" ng-class="{
+                                active: $state.includes('registration')
+                            }">
+                <i class="fa fa-dashboard"></i> Registration
+            </a>
+        </li>
+        <li class="panel">
+            <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#Menu">
+                <i class="fa fa-bar-chart-o"></i> Menu <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="nav collapse" id="Menu" ng-class="($state.includes('category') || $state.includes('menuItem') || $state.includes('offerSpecial')) ? 'in' : 'collapse'">
+                <li>
+                    <a href="category" ng-class="{
+                                active: $state.includes('category')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> Category
+                    </a>
+                </li>
+                <li>
+                    <a href="menuItem" ng-class="{
+                                active: $state.includes('menuItem')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="offerSpecial" ng-class="{
+                                active: $state.includes('offerSpecial')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> Offer/Special
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="panel">
+            <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#Order">
+                <i class="fa fa-bar-chart-o"></i> Order <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="nav collapse" id="Order" ng-class="($state.includes('newOrder') || $state.includes('pastOrder')) ? 'in' : 'collapse'">
+                <li>
+                    <a href="newOrder" ng-class="{
+                                active: $state.includes('newOrder')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> New Order
+                    </a>
+                </li>
+                <li>
+                    <a href="pastOrder" ng-class="{
+                                active: $state.includes('pastOrder')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> Past Order
+                    </a>
+                </li>
+            </ul> 
+        </li>
+        <li class="panel">
+            <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#Service">
+                <i class="fa fa-bar-chart-o"></i> Service <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="nav collapse" id="Service" ng-class="($state.includes('table') || $state.includes('waiter')|| $state.includes('chef')) ? 'in' : 'collapse'">
+                <li>
+                    <a href="table" ng-class="{
+                                                active: $state.includes('table')
+                                            }">
+                        <i class="fa fa-angle-double-right"></i> Table
+                    </a>
+                </li>
+                <li>
+                    <a href="waiter" ng-class="{
+                                active: $state.includes('waiter')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> Waiter
+                    </a>
+                </li>
+                <li>
+                    <a href="chef" ng-class="{
+                                active: $state.includes('chef')
+                            }">
+                        <i class="fa fa-angle-double-right"></i> Chef
+                    </a>
+                </li>
+            </ul>
+        </li>  
+        <li class="panel">
+            <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#Customer">
+                <i class="fa fa-bar-chart-o"></i> Customer <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="nav collapse" id="Customer" ng-class="($state.includes('customer') || $state.includes('viewCustomerFeedback')) ? 'in' : 'collapse'">
+                <li>
+                    <a href="customer"ng-class="{
+                                active: $state.includes('customer')
+                        }">
+                        <i class="fa fa-angle-double-right"></i> Manage Customer
+                    </a>
+                </li>
+                <li>
+                    <a href="viewCustomerFeedback"ng-class="{
+                                active: $state.includes('viewCustomerFeedback')
+                        }" >
+                        <i class="fa fa-angle-double-right"></i> View Customer Feedback
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="setting" ng-class="{
+                                active: $state.includes('setting')
+                            }">
+                <i class="fa fa-dashboard"></i> Setting
+            </a>
+        </li>
+
+    </ul>
+    <!-- /.side-nav -->
+</div>
+<!-- /.navbar-collapse -->

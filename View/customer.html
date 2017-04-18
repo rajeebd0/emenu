@@ -1,0 +1,172 @@
+<div id="wrapper">
+
+    <!-- begin TOP NAVIGATION -->
+    <nav class="navbar-top" role="navigation" ng-include src="'View/topbar.html'">
+
+    </nav>
+    <!-- /.navbar-top -->
+    <!-- end TOP NAVIGATION -->
+
+    <!-- begin SIDE NAVIGATION -->
+    <nav class="navbar-side" role="navigation" ng-include src="'View/menu.html'">
+
+    </nav>
+    <!-- /.navbar-side -->
+    <!-- end SIDE NAVIGATION -->
+
+    <!-- begin MAIN PAGE CONTENT -->
+    <div id="page-wrapper">
+
+        <div class="page-content">
+
+            <!-- begin PAGE TITLE AREA -->
+            <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-title">
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- end PAGE TITLE AREA -->
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="portlet portlet-green">
+                                <div class="portlet-heading">
+                                    <div class="portlet-title">
+                                        <h4><i class="fa fa-th-list"></i> Manage Customer </h4>
+                                    </div>
+                                    <div class="portlet-widgets">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#transactionsPortlet"><i class="fa fa-chevron-down"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="transactionsPortlet" class="panel-collapse collapse in">
+                                    <div class="portlet-body">
+                                        <form ng-submit="submit()"  name="form" role="form">
+                                            <!--total_employee_div-->
+                                            <div class="totalaligndiv">
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Name :</span>
+                                                        <input type="text" ng-model="customer_name" id="customer_name" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Email :</span>
+                                                        <input type="text" ng-model="customer_email" id="customer_email" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Mobile :</span>
+                                                        <input type="text" ng-model="mobile" id="mobile" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Validity :</span>
+                                                        <div class="dropdown">
+                                                            <a class="dropdown-toggle" id="dropdown" role="button" data-toggle="dropdown" data-target="#" href="#">
+                                                                <input type="text" date-parser="YYYY-MM-DD HH:mm:ss" class="form-control" data-ng-model="discount_valid" id="discount_valid">
+                                                            </a>
+                                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                                                <datetimepicker data-ng-model="discount_valid" data-datetimepicker-config="{ dropdownSelector: '#dropdown' }"></datetimepicker>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+<!--                                                <div class="col-md-6">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Validity :</span>
+                                                        <input type="text" ng-model="discount_valid" id="discount_valid" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>                                                -->
+                                                <div class="col-md-3">
+                                                    <div class="input-group bmargindiv1 col-md-12">
+                                                        <span class="input-group-addon ndrftextwidth text-left">Discount in %:</span>
+                                                        <input type="text" ng-model="discount" id="discount" class="form-control" autocomplete="off">
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <!--end_total_employee_div-->
+                                            <div class="col-lg-12">
+                                                <div class="tbpaddingdiv2 text-center">
+                                                    <input type="hidden" ng-model="hidid" id="hidid" class="form-control" autocomplete="off">
+                                                    <input type="button" class="btn btn-danger btn-md" value="Cancel" ng-click="cancelSave();">&nbsp;
+                                                    <input type="submit" class="btn btn-green btn-md" value="Save">												
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet portlet-green">
+                                <div class="portlet-heading">
+                                    <div class="portlet-title">
+                                        <h4><i class="fa fa-exchange fa-fw"></i> Customer Listing </h4>
+                                    </div>
+                                    <div class="portlet-widgets">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#listingPortlet"><i class="fa fa-chevron-down"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="listingPortlet" class="panel-collapse collapse in">
+                                    <div class="portlet-body">
+                                        <div class="table-responsive dashboard-demo-table">
+                                            <table class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL NO</th>
+                                                        <th width="300px;">Customer Name</th>
+                                                        <th width="200px;">Mobile</th>
+                                                        <th width="200px;">Email</th>
+                                                        <th width="150px;">Discount %</th>
+                                                        <th width="200px;">Validity</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="LISTVIEW">
+                                                    <tr ng-repeat="customer in customerdata">
+                                                        <td>{{$index + 1}}</td>
+                                                        <td>{{customer.customer_name}}</td>
+                                                        <td>{{customer.mobile}}</td>
+                                                        <td>{{customer.customer_email}}</td>
+                                                        <td>{{customer.discount}}</td>
+                                                        <td>{{customer.discount_valid}}</td>
+                                                        <td>
+                                                            <button class="btn btn-xs btn-success outlinedivnone" title="Edit" ng-click="editCustomer(customer.id);"><i class="fa fa-edit"></i> </button>
+                                                            <button class="btn btn-xs btn-danger outlinedivnone" title="Delete" ng-click="deleteCustomer(customer.id);"><i class="fa fa-times"></i> </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--<a class="btn btn-green">View All Transactions</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col-lg-12 -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.page-content -->
+
+    </div>
+    <!-- /#page-wrapper -->
+    <!-- end MAIN PAGE CONTENT -->
+
+</div>

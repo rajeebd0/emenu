@@ -1,0 +1,41 @@
+<div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center login-header" style="padding:40px 0px;"></div>
+            <!--/span-->
+        </div><!--/row-->
+        <div class="col-md-6 marginautodiv floatnonediv well">
+            <div class="totalaligndiv">
+                <div class="alert alert-info text-center">
+                    <span style="font-weight:bold; font-size:22px">WELCOME</span>
+                    <BR>
+                    Please login with your Username and Password.
+                </div>
+                <form name="frmlogin" id="frmlogin"  class="login-form">
+                    <fieldset>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" id="username" name="username" class="form-control" ng-model="u_name" ng-keypress="logindata($event)">
+                        </div>
+                        <div class="clearfix"></div><br>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" id="pwd" name="pwd" class="form-control" ng-model="u_password" ng-keypress="logindata($event)">
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="input-prepend">
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <p class="text-center tbpaddingdiv2">
+                            <input type="button" value="Login" name="login" id="login" class="btn btn-primary" ng-click="adminLogin();
+                                setFocus();" style="margin-top:10px;" />
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
